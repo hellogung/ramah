@@ -1,11 +1,770 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ramah</title>
-  </head>
-  <body>
-    Ramah Aowkwkwkwk 😂
-  </body>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre-Order Daging Sapi Berkualitas - Cibubur</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: #8B0000;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        
+        .logo span {
+            color: #FFD700;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #FFD700;
+        }
+        
+        .hero {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/api/placeholder/1200/600');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-content {
+            width: 100%;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #8B0000;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #690000;
+        }
+        
+        .btn-secondary {
+            background-color: #FFD700;
+            color: #333;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #e6c300;
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #8B0000;
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .product-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-info h3 {
+            margin-bottom: 10px;
+            color: #8B0000;
+        }
+        
+        .product-info p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .price {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .how-to-order {
+            background-color: #f0f0f0;
+        }
+        
+        .steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+        
+        .step {
+            flex-basis: 23%;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background-color: #8B0000;
+            color: white;
+            border-radius: 50%;
+            line-height: 50px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .step h3 {
+            margin-bottom: 15px;
+            color: #8B0000;
+        }
+        
+        .shipping-rates {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+        
+        .shipping-rates th, .shipping-rates td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .shipping-rates th {
+            background-color: #8B0000;
+            color: white;
+        }
+        
+        .shipping-rates tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .form-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        textarea.form-control {
+            height: 100px;
+        }
+        
+        .form-check {
+            margin-bottom: 10px;
+        }
+        
+        .form-buttons {
+            margin-top: 30px;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .footer-section {
+            flex-basis: 30%;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h3 {
+            color: #FFD700;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .footer-section p, .footer-section a {
+            color: #bbb;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            margin-right: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #444;
+            margin-top: 30px;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .step {
+                flex-basis: 48%;
+                margin-bottom: 20px;
+            }
+            
+            .footer-section {
+                flex-basis: 100%;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .step {
+                flex-basis: 100%;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Sapi<span>Prima</span></div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#products">Produk</a></li>
+                        <li><a href="#how-to-order">Cara Order</a></li>
+                        <li><a href="#shipping">Pengiriman</a></li>
+                        <li><a href="#order-form">Pre-Order</a></li>
+                        <li><a href="#contact">Kontak</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Daging Sapi Berkualitas Premium</h1>
+                <p>Kami menyediakan daging sapi premium dan segar langsung dari peternakan terpercaya. Pre-order sekarang untuk mendapatkan daging sapi terbaik untuk keluarga Anda.</p>
+                <a href="#order-form" class="btn btn-secondary">Pre-Order Sekarang</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Produk Kami</h2>
+                <p>Berbagai pilihan potongan daging sapi berkualitas tinggi yang dapat Anda pesan sesuai kebutuhan.</p>
+            </div>
+            <div class="products">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="/api/placeholder/300/200" alt="Has Dalam">
+                    </div>
+                    <div class="product-info">
+                        <h3>Has Dalam (Tenderloin)</h3>
+                        <p>Potongan daging paling empuk dengan sedikit lemak, cocok untuk steak.</p>
+                        <div class="price">Rp 180.000 / kg</div>
+                        <a href="#order-form" class="btn">Pesan Sekarang</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="/api/placeholder/300/200" alt="Has Luar">
+                    </div>
+                    <div class="product-info">
+                        <h3>Has Luar (Sirloin)</h3>
+                        <p>Daging dengan tekstur kenyal dan berlemak, cocok untuk steak dan BBQ.</p>
+                        <div class="price">Rp 160.000 / kg</div>
+                        <a href="#order-form" class="btn">Pesan Sekarang</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="/api/placeholder/300/200" alt="Daging Sandung Lamur">
+                    </div>
+                    <div class="product-info">
+                        <h3>Daging Sandung Lamur (Brisket)</h3>
+                        <p>Potongan daging berserat dengan lapisan lemak, cocok untuk semur atau soup.</p>
+                        <div class="price">Rp 130.000 / kg</div>
+                        <a href="#order-form" class="btn">Pesan Sekarang</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="/api/placeholder/300/200" alt="Daging Iga">
+                    </div>
+                    <div class="product-info">
+                        <h3>Daging Iga (Shortribs)</h3>
+                        <p>Daging iga sapi yang cocok untuk sup iga, konro, atau BBQ.</p>
+                        <div class="price">Rp 140.000 / kg</div>
+                        <a href="#order-form" class="btn">Pesan Sekarang</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-to-order" class="section how-to-order">
+        <div class="container">
+            <div class="section-title">
+                <h2>Cara Pre-Order</h2>
+                <p>Proses pemesanan daging sapi premium kami mudah dan cepat.</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Isi Formulir</h3>
+                    <p>Lengkapi formulir pre-order dengan jenis dan jumlah daging yang diinginkan.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Pembayaran DP</h3>
+                    <p>Lakukan pembayaran DP min. 50% untuk mengkonfirmasi pesanan Anda.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Konfirmasi</h3>
+                    <p>Kami akan mengkonfirmasi pesanan dan jadwal pengiriman via WhatsApp.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Terima Pesanan</h3>
+                    <p>Pesanan dikirim ke alamat Anda atau ambil sendiri di lokasi kami.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="shipping" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Biaya Pengiriman</h2>
+                <p>Kami melayani pengiriman ke seluruh wilayah Jabodetabek dengan tarif yang bersaing.</p>
+            </div>
+            
+            <div class="form-container">
+                <table class="shipping-rates">
+                    <thead>
+                        <tr>
+                            <th>Wilayah</th>
+                            <th>Ongkos Kirim</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Cibubur</td>
+                            <td><strong>GRATIS</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Jakarta Timur (Non-Cibubur)</td>
+                            <td>Rp 25.000</td>
+                        </tr>
+                        <tr>
+                            <td>Jakarta Pusat</td>
+                            <td>Rp 30.000</td>
+                        </tr>
+                        <tr>
+                            <td>Jakarta Selatan</td>
+                            <td>Rp 30.000</td>
+                        </tr>
+                        <tr>
+                            <td>Jakarta Barat</td>
+                            <td>Rp 35.000</td>
+                        </tr>
+                        <tr>
+                            <td>Jakarta Utara</td>
+                            <td>Rp 35.000</td>
+                        </tr>
+                        <tr>
+                            <td>Depok</td>
+                            <td>Rp 25.000</td>
+                        </tr>
+                        <tr>
+                            <td>Bekasi Kota</td>
+                            <td>Rp 35.000</td>
+                        </tr>
+                        <tr>
+                            <td>Kabupaten Bekasi</td>
+                            <td>Rp 40.000 - 55.000 (tergantung jarak)</td>
+                        </tr>
+                        <tr>
+                            <td>Bogor Kota</td>
+                            <td>Rp 40.000</td>
+                        </tr>
+                        <tr>
+                            <td>Kabupaten Bogor</td>
+                            <td>Rp 45.000 - 60.000 (tergantung jarak)</td>
+                        </tr>
+                        <tr>
+                            <td>Tangerang Selatan</td>
+                            <td>Rp 40.000</td>
+                        </tr>
+                        <tr>
+                            <td>Tangerang Kota</td>
+                            <td>Rp 45.000</td>
+                        </tr>
+                        <tr>
+                            <td>Kabupaten Tangerang</td>
+                            <td>Rp 50.000 - 65.000 (tergantung jarak)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="margin-top: 20px; font-weight: bold; color: #8B0000;">* Diskon ongkir Rp 10.000 untuk pembelian min. 10kg</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="order-form" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Formulir Pre-Order</h2>
+                <p>Isi formulir berikut untuk melakukan pre-order daging sapi premium.</p>
+            </div>
+            
+            <div class="form-container">
+                <form>
+                    <h3 style="margin-bottom: 20px; color: #8B0000;">Informasi Pribadi</h3>
+                    <div class="form-group">
+                        <label for="name">Nama Lengkap*</label>
+                        <input type="text" class="form-control" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Nomor Telepon/WhatsApp*</label>
+                        <input type="text" class="form-control" id="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Alamat Email*</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Alamat Pengiriman Lengkap*</label>
+                        <textarea class="form-control" id="address" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="city">Kota/Kabupaten Tujuan*</label>
+                        <select class="form-control" id="city" required>
+                            <option value="">-- Pilih Kota/Kabupaten --</option>
+                            <option value="Cibubur">Cibubur (GRATIS Ongkir)</option>
+                            <option value="Jakarta Timur">Jakarta Timur (Non-Cibubur)</option>
+                            <option value="Jakarta Pusat">Jakarta Pusat</option>
+                            <option value="Jakarta Selatan">Jakarta Selatan</option>
+                            <option value="Jakarta Barat">Jakarta Barat</option>
+                            <option value="Jakarta Utara">Jakarta Utara</option>
+                            <option value="Depok">Depok</option>
+                            <option value="Bekasi Kota">Bekasi Kota</option>
+                            <option value="Kabupaten Bekasi">Kabupaten Bekasi</option>
+                            <option value="Bogor Kota">Bogor Kota</option>
+                            <option value="Kabupaten Bogor">Kabupaten Bogor</option>
+                            <option value="Tangerang Selatan">Tangerang Selatan</option>
+                            <option value="Tangerang Kota">Tangerang Kota</option>
+                            <option value="Kabupaten Tangerang">Kabupaten Tangerang</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="district">Kecamatan*</label>
+                        <input type="text" class="form-control" id="district" required>
+                    </div>
+                    
+                    <h3 style="margin: 30px 0 20px; color: #8B0000;">Detail Pesanan</h3>
+                    <div class="form-group">
+                        <label for="meat-type">Jenis Daging Sapi*</label>
+                        <select class="form-control" id="meat-type" required>
+                            <option value="">-- Pilih Jenis Daging --</option>
+                            <option value="Tenderloin">Has Dalam (Tenderloin)</option>
+                            <option value="Sirloin">Has Luar (Sirloin)</option>
+                            <option value="Brisket">Daging Sandung Lamur (Brisket)</option>
+                            <option value="Shortribs">Daging Iga (Shortribs)</option>
+                            <option value="Shank">Daging Sengkel (Shank)</option>
+                            <option value="Ground Beef">Daging Giling (Ground Beef)</option>
+                            <option value="Whole">Daging Sapi Utuh (Semua Bagian)</option>
+                            <option value="Other">Lainnya</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">Jumlah Pemesanan (kg)*</label>
+                        <select class="form-control" id="quantity" required>
+                            <option value="">-- Pilih Jumlah --</option>
+                            <option value="1-5">1-5 kg</option>
+                            <option value="6-10">6-10 kg</option>
+                            <option value="11-20">11-20 kg</option>
+                            <option value="21-50">21-50 kg</option>
+                            <option value="50+">50+ kg</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Potongan Daging yang Diinginkan*</label>
+                        <div class="form-check">
+                            <input type="checkbox" id="cut-whole" name="meat-cut">
+                            <label for="cut-whole">Utuh</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="cut-chunks" name="meat-cut">
+                            <label for="cut-chunks">Dipotong kecil (untuk rendang/semur)</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="cut-sliced" name="meat-cut">
+                            <label for="cut-sliced">Diiris tipis</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="cut-ground" name="meat-cut">
+                            <label for="cut-ground">Daging giling</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="cut-custom" name="meat-cut">
+                            <label for="cut-custom">Sesuai permintaan khusus (jelaskan di bagian catatan)</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="notes">Catatan Khusus untuk Potongan Daging</label>
+                        <textarea class="form-control" id="notes"></textarea>
+                    </div>
+                    
+                    <h3 style="margin: 30px 0 20px; color: #8B0000;">Waktu Pengiriman/Pengambilan</h3>
+                    <div class="form-group">
+                        <label for="delivery-date">Tanggal Pengiriman/Pengambilan yang Diinginkan*</label>
+                        <input type="date" class="form-control" id="delivery-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Metode Pengambilan*</label>
+                        <div class="form-check">
+                            <input type="radio" id="delivery" name="pickup-method" required>
+                            <label for="delivery">Antar ke alamat (delivery)</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id="pickup" name="pickup-method">
+                            <label for="pickup">Ambil sendiri di Cibubur (self pick-up, gratis ongkir)</label>
+                        </div>
+                    </div>
+                    
+                    <h3 style="margin: 30px 0 20px; color: #8B0000;">Metode Pembayaran</h3>
+                    <div class="form-group">
+                        <label>Metode Pembayaran yang Diinginkan*</label>
+                        <div class="form-check">
+                            <input type="radio" id="bank-transfer" name="payment-method" required>
+                            <label for="bank-transfer">Transfer bank</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id="e-wallet" name="payment-method">
+                            <label for="e-wallet">E-wallet (GoPay, OVO, DANA, dll)</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id="cod" name="payment-method">
+                            <label for="cod">COD (Cash on Delivery)</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="payment-proof">Bukti Pembayaran DP (Opsional)</label>
+                        <input type="file" class="form-control" id="payment-proof">
+                    </div>
+                    
+                    <h3 style="margin: 30px 0 20px; color: #8B0000;">Konfirmasi</h3>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input type="checkbox" id="terms" required>
+                            <label for="terms">Saya menyetujui syarat dan ketentuan pemesanan*</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input type="checkbox" id="newsletter">
+                            <label for="newsletter">Saya ingin mendapatkan informasi promosi dan diskon di masa mendatang</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <button type="submit" class="btn">Kirim Pre-Order</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SapiPrima</h3>
+                    <p>Menyediakan daging sapi premium berkualitas terbaik langsung dari peternakan terpercaya.</p>
+                    <div class="social-links">
+                        <a href="#">FB</a>
+                        <a href="#">IG</a>
+                        <a href="#">WA</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Kontak Kami</h3>
+                    <p>Jl. Alternatif Cibubur No. 123</p>
+                    <p>Cibubur, Jakarta Timur</p>
+                    <p>Telp: 0812-3456-7890</p>
+                    <p>Email: info@sapiprima.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Jam Operasional</h3>
+                    <p>Senin - Jumat: 08.00 - 17.00</p>
+                    <p>Sabtu: 08.00 - 15.00</p>
+                    <p>Minggu: Tutup</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 SapiPrima. Semua Hak Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+</body>
 </html>
